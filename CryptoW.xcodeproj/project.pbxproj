@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7E523B562ADF8C76008C96FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B552ADF8C76008C96FC /* AppDelegate.m */; };
 		7E523B592ADF8C76008C96FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B582ADF8C76008C96FC /* SceneDelegate.m */; };
-		7E523B5C2ADF8C76008C96FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B5B2ADF8C76008C96FC /* ViewController.m */; };
 		7E523B5F2ADF8C76008C96FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E523B5D2ADF8C76008C96FC /* Main.storyboard */; };
 		7E523B612ADF8C78008C96FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E523B602ADF8C78008C96FC /* Assets.xcassets */; };
 		7E523B642ADF8C78008C96FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E523B622ADF8C78008C96FC /* LaunchScreen.storyboard */; };
@@ -17,6 +16,10 @@
 		7E523B712ADF8C78008C96FC /* CryptoWTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B702ADF8C78008C96FC /* CryptoWTests.m */; };
 		7E523B7B2ADF8C78008C96FC /* CryptoWUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B7A2ADF8C78008C96FC /* CryptoWUITests.m */; };
 		7E523B7D2ADF8C78008C96FC /* CryptoWUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B7C2ADF8C78008C96FC /* CryptoWUITestsLaunchTests.m */; };
+		7E523B912AE01A63008C96FC /* CryptoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B902AE01A63008C96FC /* CryptoDataController.m */; };
+		7E523B932AE01ADA008C96FC /* cryptoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E523B922AE01ADA008C96FC /* cryptoData.json */; };
+		7E523B962AE01B71008C96FC /* CryptoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B952AE01B71008C96FC /* CryptoCell.m */; };
+		7E523B982AE01E02008C96FC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B972AE01E02008C96FC /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +45,6 @@
 		7E523B552ADF8C76008C96FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7E523B572ADF8C76008C96FC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		7E523B582ADF8C76008C96FC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		7E523B5A2ADF8C76008C96FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7E523B5B2ADF8C76008C96FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7E523B5E2ADF8C76008C96FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E523B602ADF8C78008C96FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E523B632ADF8C78008C96FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +55,13 @@
 		7E523B762ADF8C78008C96FC /* CryptoWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E523B7A2ADF8C78008C96FC /* CryptoWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoWUITests.m; sourceTree = "<group>"; };
 		7E523B7C2ADF8C78008C96FC /* CryptoWUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoWUITestsLaunchTests.m; sourceTree = "<group>"; };
+		7E523B8B2AE00E39008C96FC /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7E523B8F2AE01A22008C96FC /* CryptoDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoDataController.h; sourceTree = "<group>"; };
+		7E523B902AE01A63008C96FC /* CryptoDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDataController.m; sourceTree = "<group>"; };
+		7E523B922AE01ADA008C96FC /* cryptoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cryptoData.json; sourceTree = "<group>"; };
+		7E523B942AE01B41008C96FC /* CryptoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoCell.h; sourceTree = "<group>"; };
+		7E523B952AE01B71008C96FC /* CryptoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoCell.m; sourceTree = "<group>"; };
+		7E523B972AE01E02008C96FC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +116,13 @@
 				7E523B552ADF8C76008C96FC /* AppDelegate.m */,
 				7E523B572ADF8C76008C96FC /* SceneDelegate.h */,
 				7E523B582ADF8C76008C96FC /* SceneDelegate.m */,
-				7E523B5A2ADF8C76008C96FC /* ViewController.h */,
-				7E523B5B2ADF8C76008C96FC /* ViewController.m */,
+				7E523B8E2AE01382008C96FC /* Controller */,
 				7E523B5D2ADF8C76008C96FC /* Main.storyboard */,
 				7E523B602ADF8C78008C96FC /* Assets.xcassets */,
 				7E523B622ADF8C78008C96FC /* LaunchScreen.storyboard */,
 				7E523B652ADF8C78008C96FC /* Info.plist */,
 				7E523B662ADF8C78008C96FC /* main.m */,
+				7E523B922AE01ADA008C96FC /* cryptoData.json */,
 			);
 			path = CryptoW;
 			sourceTree = "<group>";
@@ -134,6 +142,19 @@
 				7E523B7C2ADF8C78008C96FC /* CryptoWUITestsLaunchTests.m */,
 			);
 			path = CryptoWUITests;
+			sourceTree = "<group>";
+		};
+		7E523B8E2AE01382008C96FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E523B972AE01E02008C96FC /* HomeViewController.m */,
+				7E523B8B2AE00E39008C96FC /* HomeViewController.h */,
+				7E523B8F2AE01A22008C96FC /* CryptoDataController.h */,
+				7E523B902AE01A63008C96FC /* CryptoDataController.m */,
+				7E523B942AE01B41008C96FC /* CryptoCell.h */,
+				7E523B952AE01B71008C96FC /* CryptoCell.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +263,7 @@
 				7E523B642ADF8C78008C96FC /* LaunchScreen.storyboard in Resources */,
 				7E523B612ADF8C78008C96FC /* Assets.xcassets in Resources */,
 				7E523B5F2ADF8C76008C96FC /* Main.storyboard in Resources */,
+				7E523B932AE01ADA008C96FC /* cryptoData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E523B5C2ADF8C76008C96FC /* ViewController.m in Sources */,
+				7E523B982AE01E02008C96FC /* HomeViewController.m in Sources */,
+				7E523B962AE01B71008C96FC /* CryptoCell.m in Sources */,
 				7E523B562ADF8C76008C96FC /* AppDelegate.m in Sources */,
 				7E523B672ADF8C78008C96FC /* main.m in Sources */,
+				7E523B912AE01A63008C96FC /* CryptoDataController.m in Sources */,
 				7E523B592ADF8C76008C96FC /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
