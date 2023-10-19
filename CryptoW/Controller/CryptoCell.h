@@ -17,4 +17,6 @@
 @property (strong, nonatomic) UIStackView *nameAndSymbolStackView;
 @property (strong, nonatomic) UIImageView *cryptoImageView;
 
+-(void)configureCell:(NSString *)name symbol:(NSString *)symbol price:(NSString *)price percentChange:(NSString *)percentChange imageUrl:(NSString *)imageUrl;
+
 @end

@@ -23,6 +23,7 @@
     // Do any additional setup after loading the view.
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.cryptoDataController = [[CryptoDataController alloc] init];
     self.cryptoDataController.delegate = self;
     
@@ -47,11 +48,8 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
     [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        // Realiza ajustes en la interfaz aquí si es necesario.
-        // Por ejemplo, actualiza las restricciones o realinea elementos.
         self.myTableView.frame = CGRectMake(0, 0, size.width, size.height);
     } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        // Luego de la transición, actualiza la tabla.
         [self.myTableView reloadData];
     }];
 }
@@ -75,16 +73,12 @@
     NSString *slug = cryptoData[@"slug"];
     NSString *symbol = cryptoData[@"symbol"];
     
-    // Accede al precio y porcentaje de cambio según la estructura real de tus datos
+    // Accede al precio y porcentaje de cambio según la estructura real los datos
     NSDictionary *quoteData = cryptoData[@"quote"][@"USD"];
     NSNumber *price = quoteData[@"price"];
     NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
     
-    // Llena los datos en las celdas
-    cell.nameLabel.text = slug;
-    cell.symbolLabel.text = symbol;
-    cell.priceLabel.text = [NSString stringWithFormat:@"$%.2f", [price floatValue]];
-    cell.percentChangeLabel.text = [NSString stringWithFormat:@"%.2f%%", [percentChange24h floatValue]];
+    [cell configureCell:slug symbol:symbol price:[NSString stringWithFormat:@"$%.2f", [price floatValue]] percentChange:[NSString stringWithFormat:@"%.2f%%", [percentChange24h floatValue]] imageUrl:@"https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png"];
     
     return cell;
 }
@@ -94,7 +88,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-     
+    NSDictionary *cryptoData = self.cryptoDataController.cryptoCurrencies[@"coins"][indexPath.row];
+    NSString *slug = cryptoData[@"slug"];
+    NSLog(@"you selected the %@ row", slug);
 }
 
 @end
