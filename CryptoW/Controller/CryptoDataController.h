@@ -13,7 +13,7 @@
 
 @interface CryptoDataController : NSObject
 
-@property (nonatomic, strong) NSDictionary *cryptoCurrencies;
+@property (nonatomic, strong) NSMutableArray *cryptoCurrencies;
 @property (nonatomic, weak) id<CryptoDataControllerDelegate> delegate;
 
 - (void)loadCryptoDataFromJSON;

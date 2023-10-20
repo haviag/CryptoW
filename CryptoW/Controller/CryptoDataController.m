@@ -6,31 +6,45 @@
 //
 
 #import "CryptoDataController.h"
+#import "CryptoCurrency.h"
 
 @implementation CryptoDataController
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // Inicializa el arreglo para almacenar los datos de las criptomonedas.
-        _cryptoCurrencies = [NSDictionary dictionary];
+        _cryptoCurrencies = [NSMutableArray array];
     }
     return self;
 }
 
 - (void)loadCryptoDataFromJSON {
-    // Aquí debes cargar y analizar el JSON en el arreglo cryptoCurrencies.
-    // Asumiremos que ya has analizado el JSON y has almacenado los datos en el formato correcto.
     NSString *jsonFilePath = [[NSBundle mainBundle] pathForResource:@"cryptoData" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:jsonFilePath];
     
     if (jsonData) {
         NSError *error;
-        NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
         
-        if (jsonObject && !error) {
-            // Asumiendo que el JSON contiene un arreglo llamado "data".
-            self.cryptoCurrencies = jsonObject[@"data"];
+        if (jsonArray && !error) {
+            [self.cryptoCurrencies removeAllObjects];
+            NSDictionary *data = jsonArray[@"data"];
+            NSArray *coins = data[@"coins"];
+            
+            if (coins) {
+                for (NSDictionary *cryptoData in coins) {
+                    NSString *name = cryptoData[@"name"];
+                    NSString *symbol = cryptoData[@"symbol"];
+                    NSNumber *idForImage = cryptoData[@"id"];
+                    
+                    NSDictionary *quoteData = cryptoData[@"quote"][@"USD"];
+                    NSNumber *price = quoteData[@"price"];
+                    NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
+                    
+                    CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage];
+                    [self.cryptoCurrencies addObject:cryptoCurrency];
+                }
+            }
         }
     }
 }
@@ -52,18 +66,35 @@
         }
         
         NSError *jsonError;
-        NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+        NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         
         if (jsonError) {
             NSLog(@"Error al analizar JSON: %@", jsonError);
             return;
         }
         
-        // Procesa los datos y almacena las criptomonedas en el arreglo cryptoCurrencies
-        NSDictionary *cryptoArray = jsonResponse[@"data"];
-        self.cryptoCurrencies = cryptoArray;
+        // Limpiamos cualquier dato previo
+        [self.cryptoCurrencies removeAllObjects];
         
-        // Notifica a un delegado (puedes agregar uno en CryptoDataController) que los datos se han cargado
+        NSDictionary *dataInJSON = jsonArray[@"data"];
+        NSArray *coins = dataInJSON[@"coins"];
+        
+        if (coins) {
+            for (NSDictionary *cryptoData in coins) {
+                NSString *name = cryptoData[@"name"];
+                NSString *symbol = cryptoData[@"symbol"];
+                NSNumber *idForImage = cryptoData[@"id"];
+                
+                NSDictionary *quoteData = cryptoData[@"quote"][@"USD"];
+                NSNumber *price = quoteData[@"price"];
+                NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
+                
+                CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage];
+                [self.cryptoCurrencies addObject:cryptoCurrency];
+            }
+        }
+        
+        // Notifica a un delegado que los datos se han cargado
         if ([self.delegate respondsToSelector:@selector(cryptoDataDidUpdate)]) {
             [self.delegate cryptoDataDidUpdate];
         }
