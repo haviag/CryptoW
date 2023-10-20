@@ -119,7 +119,6 @@
 - (void)accessWalletTapped {
     HomeViewController *homeVC = [[HomeViewController alloc] init];
 
-//    [self presentViewController:homeVC animated:YES completion:nil];
     [self.navigationController pushViewController:homeVC animated:YES];
 }
 

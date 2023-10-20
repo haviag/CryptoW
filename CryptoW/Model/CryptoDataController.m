@@ -50,13 +50,11 @@
 }
 
 - (void)loadCryptoDataFromAPI {
-    // URL de la API de CoinMarketCap
-    NSString *apiKey = @"7a6ab6a3-ee28-4074-89c7-5e08cbb640b5"; // Tu clave de API
+    NSString *apiKey = @"7a6ab6a3-ee28-4074-89c7-5e08cbb640b5";
     NSString *urlString = [NSString stringWithFormat:@"https://pro-api.coinmarketcap.com/v1/cryptocurrency/category?id=605e2ce9d41eae1066535f7c&start=1&limit=20&convert=USD"];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    // Configura la solicitud con el encabezado de la API Key
     [request setValue:apiKey forHTTPHeaderField:@"X-CMC_PRO_API_KEY"];
     
     NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -73,7 +71,6 @@
             return;
         }
         
-        // Limpiamos cualquier dato previo
         [self.cryptoCurrencies removeAllObjects];
         
         NSDictionary *dataInJSON = jsonArray[@"data"];
@@ -94,7 +91,6 @@
             }
         }
         
-        // Notifica a un delegado que los datos se han cargado
         if ([self.delegate respondsToSelector:@selector(cryptoDataDidUpdate)]) {
             [self.delegate cryptoDataDidUpdate];
         }

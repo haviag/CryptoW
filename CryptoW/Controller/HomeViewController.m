@@ -29,8 +29,8 @@
     self.cryptoDataController = [[CryptoDataController alloc] init];
     self.cryptoDataController.delegate = self;
     
-    [self.cryptoDataController loadCryptoDataFromAPI];
-//    [self.cryptoDataController loadCryptoDataFromJSON];
+//    [self.cryptoDataController loadCryptoDataFromAPI];
+    [self.cryptoDataController loadCryptoDataFromJSON];
     [self.myTableView registerClass:[CryptoCell class] forCellReuseIdentifier:@"CryptoCell"];
     
     self.myTableView.dataSource = self;

@@ -21,13 +21,11 @@
         
         self.cryptoImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.cryptoImageView.clipsToBounds = YES;
-//        self.cryptoImageView.backgroundColor = UIColor.whiteColor;
         
         self.priceAndPercentajeStackView = [[UIStackView alloc] init];
         self.priceAndPercentajeStackView.axis = UILayoutConstraintAxisVertical;
         self.priceAndPercentajeStackView.spacing = 5;
         self.priceAndPercentajeStackView.distribution = UIStackViewDistributionFillEqually;
-//        self.priceAndPercentajeStackView.backgroundColor = UIColor.redColor;
         self.priceAndPercentajeStackView.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.nameAndSymbolStackView = [[UIStackView alloc] init];
@@ -35,18 +33,15 @@
         self.nameAndSymbolStackView.spacing = 2;
         self.nameAndSymbolStackView.alignment = UIStackViewAlignmentTop;
         self.nameAndSymbolStackView.distribution = UIStackViewDistributionFillEqually;
-//        self.nameAndSymbolStackView.backgroundColor = UIColor.greenColor;
         self.nameAndSymbolStackView.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.nameLabel = [[UILabel alloc] init];
         self.nameLabel.font = [UIFont boldSystemFontOfSize:14.0];
-//        self.nameLabel.backgroundColor = UIColor.orangeColor;
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.symbolLabel = [[UILabel alloc] init];
         self.symbolLabel.font = [UIFont systemFontOfSize:10.0];
-//        self.symbolLabel.backgroundColor = UIColor.yellowColor;
         self.symbolLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
@@ -75,7 +70,6 @@
             if (data && !error) {
                 UIImage *image = [UIImage imageWithData:data];
                 if (image) {
-                    // Actualiza el UIImageView en el hilo principal
                     dispatch_async(dispatch_get_main_queue(), ^{
                         self.cryptoImageView.image = image;
                     });
