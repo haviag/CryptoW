@@ -41,7 +41,7 @@
     
     self.subtitleLabel = [[UILabel alloc] init];
     self.subtitleLabel.text = @"If you are creating a new wallet press the GENERATE button. Take note of the mnemonic phrase, it should be stored in a safe place.";
-    self.subtitleLabel.textColor = [UIColor whiteColor];
+    self.subtitleLabel.textColor = [UIColor lightTextColor];
     self.subtitleLabel.font = [UIFont systemFontOfSize:18.0];
     self.subtitleLabel.numberOfLines = 0;
     self.subtitleLabel.textAlignment = NSTextAlignmentLeft;
@@ -89,18 +89,18 @@
     
     [self.welcomeLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.welcomeLabel.topAnchor constraintEqualToAnchor:self.myView.topAnchor constant:100].active = YES;
-    [self.welcomeLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:8].active = YES;
-    [self.welcomeLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-8].active = YES;
+    [self.welcomeLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
+    [self.welcomeLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
     
     [self.subtitleLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.subtitleLabel.topAnchor constraintEqualToAnchor:self.welcomeLabel.bottomAnchor constant:24].active = YES;
-    [self.subtitleLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:8].active = YES;
-    [self.subtitleLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-8].active = YES;
+    [self.subtitleLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
+    [self.subtitleLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
     
     [self.informationLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.informationLabel.topAnchor constraintEqualToAnchor:self.subtitleLabel.bottomAnchor constant:64].active = YES;
-    [self.informationLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:8].active = YES;
-    [self.informationLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-8].active = YES;
+    [self.informationLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
+    [self.informationLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
     
     [self.generateWalletButton.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:30].active = YES;
     [self.generateWalletButton.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-30].active = YES;

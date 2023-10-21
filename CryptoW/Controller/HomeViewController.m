@@ -9,6 +9,7 @@
 #import "CryptoDataController.h"
 #import "CryptoCell.h"
 #import "CryptoCurrency.h"
+#import "CryptoDetailController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
 
@@ -89,7 +90,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 5, tableView.frame.size.width - 20, 20)];
-//    headerView.backgroundColor = UIColor.blueColor;
     titleLabel.text = @"Home";
     titleLabel.font = [UIFont systemFontOfSize:24.0];
     titleLabel.textColor = [UIColor lightTextColor];
@@ -101,10 +101,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CryptoCurrency *cryptoCurrency = self.cryptoDataController.cryptoCurrencies[indexPath.row];
-    NSLog(@"you selected the %@ row", cryptoCurrency.name);
-    UIViewController *cryptoDetailController = [[UIViewController alloc] init];
-//    [self.navigationController pushViewController:cryptoDetailController animated:true];
+    NSLog(@"price the %@ row", cryptoCurrency.price);
+    
+    CryptoDetailController *cryptoDetailController = [[CryptoDetailController alloc] initWithCryptoCurrency:cryptoCurrency];
+    
     [self presentViewController:cryptoDetailController animated:true completion:nil];
+//    [self.navigationController pushViewController:cryptoDetailController animated:true];
 }
 
 @end
