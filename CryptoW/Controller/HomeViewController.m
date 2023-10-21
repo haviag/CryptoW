@@ -105,8 +105,8 @@
     
     CryptoDetailController *cryptoDetailController = [[CryptoDetailController alloc] initWithCryptoCurrency:cryptoCurrency];
     
-    [self presentViewController:cryptoDetailController animated:true completion:nil];
-//    [self.navigationController pushViewController:cryptoDetailController animated:true];
+//    [self presentViewController:cryptoDetailController animated:true completion:nil];
+    [self.navigationController pushViewController:cryptoDetailController animated:true];
 }
 
 @end

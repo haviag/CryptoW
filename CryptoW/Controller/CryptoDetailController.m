@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     self.myDetailView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.myDetailView.backgroundColor = [UIColor darkGrayColor];
+    self.view.backgroundColor = [UIColor darkGrayColor];
     
     [self.view addSubview:self.myDetailView];
     
@@ -31,7 +31,7 @@
     [self.myDetailView addSubview:self.cryptoImageView];
     
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.font = [UIFont systemFontOfSize:18.0];
+    self.nameLabel.font = [UIFont boldSystemFontOfSize:18.0];
     self.nameLabel.textColor = [UIColor whiteColor];
     [self.myDetailView addSubview:self.nameLabel];
     
@@ -42,9 +42,9 @@
     
     self.squaredButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.squaredButton.tintColor = [UIColor whiteColor];
-    [self.squaredButton setImage:[UIImage systemImageNamed:@"star"] forState:UIControlStateNormal];
-    self.squaredButton.backgroundColor = [UIColor lightGrayColor];
-    self.squaredButton.layer.cornerRadius = 5;
+    [self.squaredButton setImage:[UIImage systemImageNamed:@"square.and.arrow.up"] forState:UIControlStateNormal];
+//    self.squaredButton.backgroundColor = [UIColor lightGrayColor];
+//    self.squaredButton.layer.cornerRadius = 5;
     [self.myDetailView addSubview:self.squaredButton];
     
     self.priceLabel = [[UILabel alloc] init];
@@ -69,7 +69,18 @@
     [self setupConstraints];
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        self.myDetailView.frame = CGRectMake(0, 0, size.width, size.height);
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        [self.myDetailView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    }];
+}
+
 -(void)setupConstraints {
+    self.myDetailView.translatesAutoresizingMaskIntoConstraints = NO;
     self.cryptoImageView.translatesAutoresizingMaskIntoConstraints = NO;
     self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.symbolLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -77,6 +88,11 @@
     self.priceLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.percentChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.trackInPortfolioButton.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.myDetailView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = YES;
+    [self.myDetailView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = YES;
+    [self.myDetailView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = YES;
+    [self.myDetailView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor].active = YES;
     
     [_cryptoImageView.heightAnchor constraintEqualToConstant:40].active = YES;
     [_cryptoImageView.widthAnchor constraintEqualToConstant:40].active = YES;
@@ -88,7 +104,7 @@
     [self.nameLabel.topAnchor constraintEqualToAnchor:self.myDetailView.topAnchor constant:24].active = YES;
     
     [self.symbolLabel.leadingAnchor constraintEqualToAnchor:self.nameLabel.trailingAnchor constant:8].active = YES;
-    [self.symbolLabel.topAnchor constraintEqualToAnchor:self.myDetailView.topAnchor constant:24].active = YES;
+    [self.symbolLabel.topAnchor constraintEqualToAnchor:self.myDetailView.topAnchor constant:26].active = YES;
     
     [self.squaredButton.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
     [self.squaredButton.topAnchor constraintEqualToAnchor:self.myDetailView.topAnchor constant:16].active = YES;
@@ -104,7 +120,7 @@
     [self.trackInPortfolioButton.topAnchor constraintEqualToAnchor:self.priceLabel.bottomAnchor constant:16].active = YES;
     [self.trackInPortfolioButton.leadingAnchor constraintEqualToAnchor:self.myDetailView.leadingAnchor constant:16].active = YES;
     [self.trackInPortfolioButton.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
-    [self.trackInPortfolioButton.titleLabel.leadingAnchor constraintEqualToAnchor:self.trackInPortfolioButton.leadingAnchor constant:32].active = YES;
+//    [self.trackInPortfolioButton.titleLabel.leadingAnchor constraintEqualToAnchor:self.trackInPortfolioButton.leadingAnchor constant:32].active = YES;
     [self.trackInPortfolioButton.heightAnchor constraintEqualToConstant:32].active = YES;
 }
 

@@ -118,7 +118,8 @@
 
 - (void)accessWalletTapped {
     HomeViewController *homeVC = [[HomeViewController alloc] init];
-
+    
+    self.navigationController.navigationBar.tintColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:homeVC animated:YES];
 }
 
