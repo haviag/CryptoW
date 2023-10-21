@@ -40,8 +40,9 @@
                     NSDictionary *quoteData = cryptoData[@"quote"][@"USD"];
                     NSNumber *price = quoteData[@"price"];
                     NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
+                    NSNumber *circulatingSupply = cryptoData[@"circulating_supply"];
                     
-                    CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage];
+                    CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply];
                     [self.cryptoCurrencies addObject:cryptoCurrency];
                 }
             }
@@ -51,7 +52,7 @@
 
 - (void)loadCryptoDataFromAPI {
     NSString *apiKey = @"7a6ab6a3-ee28-4074-89c7-5e08cbb640b5";
-    NSString *urlString = [NSString stringWithFormat:@"https://pro-api.coinmarketcap.com/v1/cryptocurrency/category?id=605e2ce9d41eae1066535f7c&start=1&limit=20&convert=USD"];
+    NSString *urlString = [NSString stringWithFormat:@"https://pro-api.coinmarketcap.com/v1/cryptocurrency/category?id=605e2ce9d41eae1066535f7c&start=1&limit=100&convert=USD"];
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
@@ -85,8 +86,9 @@
                 NSDictionary *quoteData = cryptoData[@"quote"][@"USD"];
                 NSNumber *price = quoteData[@"price"];
                 NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
+                NSNumber *circulatingSupply = cryptoData[@"circulating_supply"];
                 
-                CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage];
+                CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply];
                 [self.cryptoCurrencies addObject:cryptoCurrency];
             }
         }

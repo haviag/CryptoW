@@ -43,8 +43,6 @@
     self.squaredButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     self.squaredButton.tintColor = [UIColor whiteColor];
     [self.squaredButton setImage:[UIImage systemImageNamed:@"square.and.arrow.up"] forState:UIControlStateNormal];
-//    self.squaredButton.backgroundColor = [UIColor lightGrayColor];
-//    self.squaredButton.layer.cornerRadius = 5;
     [self.myDetailView addSubview:self.squaredButton];
     
     self.priceLabel = [[UILabel alloc] init];
@@ -64,6 +62,17 @@
     self.trackInPortfolioButton.backgroundColor = [UIColor lightGrayColor];
     self.trackInPortfolioButton.layer.cornerRadius = 5;
     [self.myDetailView addSubview:self.trackInPortfolioButton];
+    
+    self.circulateSupplyTitleLabel = [[UILabel alloc] init];
+    self.circulateSupplyTitleLabel.text = @"Circulating supply:";
+    self.circulateSupplyTitleLabel.font = [UIFont systemFontOfSize:18];
+    self.circulateSupplyTitleLabel.textColor = [UIColor whiteColor];
+    [self.myDetailView addSubview:self.circulateSupplyTitleLabel];
+    
+    self.circulateSupplyLabel = [[UILabel alloc] init];
+    self.circulateSupplyLabel.font = [UIFont systemFontOfSize:18];
+    self.circulateSupplyLabel.textColor = [UIColor whiteColor];
+    [self.myDetailView addSubview:self.circulateSupplyLabel];
     
     [self configureDetailView:_cryptoCurrency];
     [self setupConstraints];
@@ -88,6 +97,8 @@
     self.priceLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.percentChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.trackInPortfolioButton.translatesAutoresizingMaskIntoConstraints = NO;
+    self.circulateSupplyLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.circulateSupplyTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.myDetailView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = YES;
     [self.myDetailView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor].active = YES;
@@ -117,22 +128,31 @@
     [self.percentChangeLabel.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
     [self.percentChangeLabel.topAnchor constraintEqualToAnchor:self.cryptoImageView.bottomAnchor constant:16].active = YES;
     
-    [self.trackInPortfolioButton.topAnchor constraintEqualToAnchor:self.priceLabel.bottomAnchor constant:16].active = YES;
+    [self.trackInPortfolioButton.topAnchor constraintEqualToAnchor:self.priceLabel.bottomAnchor constant:32].active = YES;
     [self.trackInPortfolioButton.leadingAnchor constraintEqualToAnchor:self.myDetailView.leadingAnchor constant:16].active = YES;
     [self.trackInPortfolioButton.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
 //    [self.trackInPortfolioButton.titleLabel.leadingAnchor constraintEqualToAnchor:self.trackInPortfolioButton.leadingAnchor constant:32].active = YES;
     [self.trackInPortfolioButton.heightAnchor constraintEqualToConstant:32].active = YES;
+    
+    [self.circulateSupplyTitleLabel.topAnchor constraintEqualToAnchor:self.trackInPortfolioButton.bottomAnchor constant:32].active = YES;
+    [self.circulateSupplyTitleLabel.leadingAnchor constraintEqualToAnchor:self.myDetailView.leadingAnchor constant:16].active = YES;
+    
+    [self.circulateSupplyLabel.topAnchor constraintEqualToAnchor:self.trackInPortfolioButton.bottomAnchor constant:32].active = YES;
+    [self.circulateSupplyLabel.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
 }
 
 -(void)configureDetailView: (CryptoCurrency *)cryptoCurrency {
-    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     NSString *baseUrl = @"https://s2.coinmarketcap.com/static/img/coins/64x64/";
     NSString *imageName = [NSString stringWithFormat:@"%@.png", [NSString stringWithFormat:@"%d", [cryptoCurrency.idForImage intValue]]];
     [self loadCryptoImageFromURL:[baseUrl stringByAppendingString:imageName]];
     self.nameLabel.text = cryptoCurrency.name;
     self.symbolLabel.text = cryptoCurrency.symbol;
-    self.priceLabel.text = [NSString stringWithFormat:@"$%.2f", [cryptoCurrency.price floatValue]];
+    self.priceLabel.text = [formatter stringFromNumber:cryptoCurrency.price];
     self.percentChangeLabel.text = [NSString stringWithFormat:@"%.2f%%", [cryptoCurrency.percentChange24h floatValue]];
+    
+    self.circulateSupplyLabel.text = [formatter stringFromNumber:cryptoCurrency.circulatingSupply];
 }
 
 - (void)loadCryptoImageFromURL:(NSString *)urlString {

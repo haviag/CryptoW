@@ -100,8 +100,8 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CryptoCurrency *cryptoCurrency = self.cryptoDataController.cryptoCurrencies[indexPath.row];
-    NSLog(@"price the %@ row", cryptoCurrency.price);
     
     CryptoDetailController *cryptoDetailController = [[CryptoDetailController alloc] initWithCryptoCurrency:cryptoCurrency];
     
