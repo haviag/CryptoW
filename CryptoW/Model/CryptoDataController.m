@@ -41,8 +41,9 @@
                     NSNumber *price = quoteData[@"price"];
                     NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
                     NSNumber *circulatingSupply = cryptoData[@"circulating_supply"];
+                    NSNumber *maxSupply = cryptoData[@"max_supply"];
                     
-                    CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply];
+                    CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply maxSupply:maxSupply];
                     [self.cryptoCurrencies addObject:cryptoCurrency];
                 }
             }
@@ -87,8 +88,9 @@
                 NSNumber *price = quoteData[@"price"];
                 NSNumber *percentChange24h = quoteData[@"percent_change_24h"];
                 NSNumber *circulatingSupply = cryptoData[@"circulating_supply"];
+                NSNumber *maxSupply = cryptoData[@"max_supply"];
                 
-                CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply];
+                CryptoCurrency *cryptoCurrency = [[CryptoCurrency alloc] initWithName:name symbol:symbol price:price percentChange24h:percentChange24h idForImage:idForImage circulatingSupply:circulatingSupply maxSupply:maxSupply];
                 [self.cryptoCurrencies addObject:cryptoCurrency];
             }
         }

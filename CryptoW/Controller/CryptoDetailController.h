@@ -21,6 +21,10 @@
 @property (strong, nonatomic) UIImageView *cryptoImageView;
 @property (strong, nonatomic) UIButton *squaredButton;
 @property (strong, nonatomic) UIButton *trackInPortfolioButton;
+@property (strong, nonatomic) UISlider *mySlider;
+@property (strong, nonatomic) UILabel *circulatingSupplyPercentageLabel;
+@property (strong, nonatomic) UILabel *aboutCoinTitleLabel;
+@property (strong, nonatomic) UILabel *aboutCoinBodyLabel;
 
 
 @property (strong, nonatomic) CryptoCurrency *cryptoCurrency;

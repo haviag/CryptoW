@@ -15,7 +15,8 @@
 @property (nonatomic, strong) NSNumber *percentChange24h;
 @property (nonatomic, strong) NSNumber *idForImage;
 @property (nonatomic, strong) NSNumber *circulatingSupply;
+@property (nonatomic, strong) NSNumber *maxSupply;
 
-- (instancetype)initWithName:(NSString *)name symbol:(NSString *)symbol price:(NSNumber *)price percentChange24h:(NSNumber *)percentChange24h idForImage:(NSNumber *)idForImage circulatingSupply:(NSNumber *)circulatingSupply;
+- (instancetype)initWithName:(NSString *)name symbol:(NSString *)symbol price:(NSNumber *)price percentChange24h:(NSNumber *)percentChange24h idForImage:(NSNumber *)idForImage circulatingSupply:(NSNumber *)circulatingSupply maxSupply:(NSNumber *)maxSupply;
 
 @end
