@@ -20,14 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
     self.myDetailView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     self.view.backgroundColor = [UIColor darkGrayColor];
     
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scrollView addSubview:self.myDetailView];
     scrollView.contentSize = self.myDetailView.frame.size;
     [self.view addSubview:scrollView];
+
+//    [self.view addSubview:self.myDetailView];
     
     self.cryptoImageView = [[UIImageView alloc] init];
     self.cryptoImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -184,7 +185,7 @@
     [self.aboutCoinBodyLabel.topAnchor constraintEqualToAnchor:self.aboutCoinTitleLabel.bottomAnchor constant:32].active = YES;
     [self.aboutCoinBodyLabel.leadingAnchor constraintEqualToAnchor:self.myDetailView.leadingAnchor constant:16].active = YES;
     [self.aboutCoinBodyLabel.trailingAnchor constraintEqualToAnchor:self.myDetailView.trailingAnchor constant:-16].active = YES;
-    [self.aboutCoinBodyLabel.bottomAnchor constraintEqualToAnchor:self.myDetailView.bottomAnchor constant:32].active = YES;
+    [self.aboutCoinBodyLabel.bottomAnchor constraintEqualToAnchor:self.myDetailView.safeAreaLayoutGuide.bottomAnchor constant:-32].active = YES;
 }
 
 -(void)configureDetailView: (CryptoCurrency *)cryptoCurrency {

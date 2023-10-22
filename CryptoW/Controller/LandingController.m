@@ -87,33 +87,40 @@
     self.qRCaptureButton.translatesAutoresizingMaskIntoConstraints = NO;
     self.accessWalletButton.translatesAutoresizingMaskIntoConstraints = NO;
     
+    [self.myView.leadingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.leadingAnchor].active = YES;
+    [self.myView.trailingAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.trailingAnchor].active = YES;
+    [self.myView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor].active = YES;
+    [self.myView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-32].active = YES;
+    
     [self.welcomeLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
-    [self.welcomeLabel.topAnchor constraintEqualToAnchor:self.myView.topAnchor constant:100].active = YES;
-    [self.welcomeLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
-    [self.welcomeLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
+    [self.welcomeLabel.topAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.topAnchor].active = YES;
+    [self.welcomeLabel.leadingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.leadingAnchor constant:16].active = YES;
+    [self.welcomeLabel.trailingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.trailingAnchor constant:-16].active = YES;
     
     [self.subtitleLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.subtitleLabel.topAnchor constraintEqualToAnchor:self.welcomeLabel.bottomAnchor constant:24].active = YES;
-    [self.subtitleLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
-    [self.subtitleLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
+    [self.subtitleLabel.leadingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.leadingAnchor constant:16].active = YES;
+    [self.subtitleLabel.trailingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.trailingAnchor constant:-16].active = YES;
     
     [self.informationLabel.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.informationLabel.topAnchor constraintEqualToAnchor:self.subtitleLabel.bottomAnchor constant:64].active = YES;
-    [self.informationLabel.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:16].active = YES;
-    [self.informationLabel.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-16].active = YES;
+    [self.informationLabel.leadingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.leadingAnchor constant:16].active = YES;
+    [self.informationLabel.trailingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.trailingAnchor constant:-16].active = YES;
     
-    [self.generateWalletButton.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:30].active = YES;
-    [self.generateWalletButton.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-30].active = YES;
+    [self.generateWalletButton.leadingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.leadingAnchor constant:30].active = YES;
+    [self.generateWalletButton.trailingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.trailingAnchor constant:-30].active = YES;
     [self.generateWalletButton.topAnchor constraintEqualToAnchor:self.informationLabel.bottomAnchor constant:64].active = YES;
     [self.generateWalletButton.heightAnchor constraintEqualToConstant:60].active = YES;
     
     [self.qRCaptureButton.centerXAnchor constraintEqualToAnchor:self.myView.centerXAnchor].active = YES;
     [self.qRCaptureButton.topAnchor constraintEqualToAnchor:self.generateWalletButton.bottomAnchor constant:16].active = YES;
     
-    [self.accessWalletButton.leadingAnchor constraintEqualToAnchor:self.myView.leadingAnchor constant:30].active = YES;
-    [self.accessWalletButton.trailingAnchor constraintEqualToAnchor:self.myView.trailingAnchor constant:-30].active = YES;
+    [self.accessWalletButton.leadingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.leadingAnchor constant:30].active = YES;
+    [self.accessWalletButton.trailingAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.trailingAnchor constant:-30].active = YES;
     [self.accessWalletButton.topAnchor constraintEqualToAnchor:self.qRCaptureButton.bottomAnchor constant:64].active = YES;
     [self.accessWalletButton.heightAnchor constraintEqualToConstant:60].active = YES;
+    [self.accessWalletButton.bottomAnchor constraintEqualToAnchor:self.myView.safeAreaLayoutGuide.bottomAnchor constant:-32].active = YES;
+
 }
 
 - (void)accessWalletTapped {
