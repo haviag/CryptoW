@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     self.myDetailView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.view.backgroundColor = [UIColor darkGrayColor];
+    self.view.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [scrollView addSubview:self.myDetailView];
@@ -64,7 +64,7 @@
     [self.trackInPortfolioButton setTitle:@"Track in portfolio" forState:UIControlStateNormal];
     [self.trackInPortfolioButton setImage:[UIImage systemImageNamed:@"chart.pie"] forState:UIControlStateNormal];
     self.trackInPortfolioButton.tintColor = [UIColor whiteColor];
-    self.trackInPortfolioButton.backgroundColor = [UIColor lightGrayColor];
+    self.trackInPortfolioButton.backgroundColor = [UIColor colorNamed:@"myButtonColor"];
     self.trackInPortfolioButton.layer.cornerRadius = 5;
     [self.myDetailView addSubview:self.trackInPortfolioButton];
     
