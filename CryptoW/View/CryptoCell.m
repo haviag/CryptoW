@@ -12,7 +12,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = [UIColor darkGrayColor];
+        self.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
         
         self.cryptoImageView = [[UIImageView alloc] init];
         self.cryptoImageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -37,23 +37,27 @@
         
         self.nameLabel = [[UILabel alloc] init];
         self.nameLabel.font = [UIFont boldSystemFontOfSize:14.0];
+        self.nameLabel.textColor = [UIColor whiteColor];
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.symbolLabel = [[UILabel alloc] init];
         self.symbolLabel.font = [UIFont systemFontOfSize:10.0];
+        self.symbolLabel.textColor = [UIColor grayColor];
         self.symbolLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.priceLabel = [[UILabel alloc] init];
         self.priceLabel.font = [UIFont boldSystemFontOfSize:18.0];
         self.priceLabel.textAlignment = NSTextAlignmentRight;
+        self.priceLabel.textColor = [UIColor whiteColor];
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.percentChangeLabel = [[UILabel alloc] init];
         self.percentChangeLabel.font = [UIFont systemFontOfSize:10.0];
         self.percentChangeLabel.textAlignment = NSTextAlignmentRight;
+        self.percentChangeLabel.textColor = [UIColor whiteColor];
         self.percentChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         [self setupConstraints];
@@ -88,7 +92,7 @@
     sectionStackView.axis = UILayoutConstraintAxisHorizontal;
     sectionStackView.spacing = 16;
     sectionStackView.distribution = UIStackViewDistributionFillProportionally;
-    sectionStackView.backgroundColor = [UIColor lightGrayColor];
+    sectionStackView.backgroundColor = [UIColor colorNamed:@"myPrimaryBgColor"];
     sectionStackView.layer.cornerRadius = 10;
     
     [self.contentView addSubview:sectionStackView];

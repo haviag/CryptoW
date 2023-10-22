@@ -7,6 +7,7 @@
 
 #import "LandingController.h"
 #import "HomeViewController.h"
+#import "CryptoDataController.h"
 
 @interface LandingController ()
 
@@ -27,7 +28,7 @@
     [super viewDidLoad];
     
     self.myView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    self.myView.backgroundColor = [UIColor darkGrayColor];
+    self.myView.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
     
     [self.view addSubview:self.myView];
     
@@ -58,7 +59,7 @@
     self.generateWalletButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.generateWalletButton setTitle:@"Generate Wallet" forState:UIControlStateNormal];
     [self.generateWalletButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.generateWalletButton.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
+    self.generateWalletButton.backgroundColor = [UIColor colorNamed:@"myPrimaryBgColor"];
     self.generateWalletButton.layer.cornerRadius = 10;
     [self.myView addSubview:self.generateWalletButton];
     
@@ -71,7 +72,7 @@
     self.accessWalletButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.accessWalletButton setTitle:@"Access Wallet" forState:UIControlStateNormal];
     [self.accessWalletButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.accessWalletButton.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
+    self.accessWalletButton.backgroundColor = [UIColor colorNamed:@"myButtonColor"];
     self.accessWalletButton.layer.cornerRadius = 10;
     [self.accessWalletButton addTarget:self action:@selector(accessWalletTapped) forControlEvents:UIControlEventTouchUpInside];
     [self.myView addSubview:self.accessWalletButton];
@@ -124,7 +125,8 @@
 }
 
 - (void)accessWalletTapped {
-    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    CryptoDataController *cryptoDataController = [[CryptoDataController alloc] init];
+    HomeViewController *homeVC = [[HomeViewController alloc] initWithCryptoData:cryptoDataController];
     
     self.navigationController.navigationBar.tintColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:homeVC animated:YES];

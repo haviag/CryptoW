@@ -6,9 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CryptoDataController.h"
 
 @interface HomeViewController : UIViewController
 
+@property (strong, nonatomic) CryptoDataController *cryptoDataController;
+-(instancetype)initWithCryptoData:(CryptoDataController *)cryptoData;
 
 @end
 

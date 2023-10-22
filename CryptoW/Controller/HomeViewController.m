@@ -6,7 +6,6 @@
 //
 
 #import "HomeViewController.h"
-#import "CryptoDataController.h"
 #import "CryptoCell.h"
 #import "CryptoCurrency.h"
 #import "CryptoDetailController.h"
@@ -14,11 +13,18 @@
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
 
 @property (strong, nonatomic) UITableView *myTableView;
-@property (strong, nonatomic) CryptoDataController *cryptoDataController;
 
 @end
 
 @implementation HomeViewController
+
+-(instancetype)initWithCryptoData:(CryptoDataController *)cryptoData {
+    self = [super init];
+    if (self) {
+        _cryptoDataController = cryptoData;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,12 +32,11 @@
     
     self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.myTableView.backgroundColor = [UIColor darkGrayColor];
-    self.cryptoDataController = [[CryptoDataController alloc] init];
+    self.myTableView.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
     self.cryptoDataController.delegate = self;
     
-    [self.cryptoDataController loadCryptoDataFromAPI];
-//    [self.cryptoDataController loadCryptoDataFromJSON];
+//    [self.cryptoDataController loadCryptoDataFromAPI];
+    [self.cryptoDataController loadCryptoDataFromJSON];
     [self.myTableView registerClass:[CryptoCell class] forCellReuseIdentifier:@"CryptoCell"];
     
     self.myTableView.dataSource = self;
