@@ -30,8 +30,8 @@
     self.cryptoDataController = [[CryptoDataController alloc] init];
     self.cryptoDataController.delegate = self;
     
-//    [self.cryptoDataController loadCryptoDataFromAPI];
-    [self.cryptoDataController loadCryptoDataFromJSON];
+    [self.cryptoDataController loadCryptoDataFromAPI];
+//    [self.cryptoDataController loadCryptoDataFromJSON];
     [self.myTableView registerClass:[CryptoCell class] forCellReuseIdentifier:@"CryptoCell"];
     
     self.myTableView.dataSource = self;
@@ -105,7 +105,6 @@
     
     CryptoDetailController *cryptoDetailController = [[CryptoDetailController alloc] initWithCryptoCurrency:cryptoCurrency];
     
-//    [self presentViewController:cryptoDetailController animated:true completion:nil];
     [self.navigationController pushViewController:cryptoDetailController animated:true];
 }
 
