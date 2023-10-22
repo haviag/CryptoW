@@ -3,4 +3,118 @@
    uuid = "117D4A38-4F40-42E9-81F3-C5E74081D930"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAFFF2B6-D819-4932-85A0-55D5C3A3D142"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoW/Controller/HomeViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-cryptoDataDidUpdate"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CAFFF2B6-D819-4932-85A0-55D5C3A3D142 - 1a6a85b7dab5346e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[HomeViewController cryptoDataDidUpdate]_block_invoke"
+                  moduleName = "CryptoW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haroldvillacob/Documents/GitHub/CryptoW/CryptoW/Controller/HomeViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "CAFFF2B6-D819-4932-85A0-55D5C3A3D142 - 1a6a85b7dab5346e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[HomeViewController cryptoDataDidUpdate]_block_invoke"
+                  moduleName = "CryptoW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haroldvillacob/Documents/GitHub/CryptoW/CryptoW/Controller/HomeViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AED21322-4D22-4BED-82DB-2335BD229FAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoW/Controller/CryptoDataController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-loadCryptoDataFromJSON"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AC9D40A-6E9A-497A-B6AD-587D196F312B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoW/Controller/CryptoDataController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-loadCryptoDataFromAPI"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9AC9D40A-6E9A-497A-B6AD-587D196F312B - 9ae11c67fb50faf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CryptoDataController loadCryptoDataFromAPI]_block_invoke"
+                  moduleName = "CryptoW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haroldvillacob/Documents/GitHub/CryptoW/CryptoW/Controller/CryptoDataController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "480">
+               </Location>
+               <Location
+                  uuid = "9AC9D40A-6E9A-497A-B6AD-587D196F312B - 9ae11c67fb50ffc4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[CryptoDataController loadCryptoDataFromAPI]_block_invoke"
+                  moduleName = "CryptoW"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haroldvillacob/Documents/GitHub/CryptoW/CryptoW/Controller/CryptoDataController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "480">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
