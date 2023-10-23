@@ -128,7 +128,6 @@
     CryptoDataController *cryptoDataController = [[CryptoDataController alloc] init];
     HomeViewController *homeVC = [[HomeViewController alloc] initWithCryptoData:cryptoDataController];
     
-    self.navigationController.navigationBar.tintColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:homeVC animated:YES];
 }
 

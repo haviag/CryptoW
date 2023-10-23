@@ -16,46 +16,46 @@
         
         self.cryptoImageView = [[UIImageView alloc] init];
         self.cryptoImageView.translatesAutoresizingMaskIntoConstraints = NO;
-        [_cryptoImageView.heightAnchor constraintEqualToConstant:56].active = YES;
-        [_cryptoImageView.widthAnchor constraintEqualToConstant:56].active = YES;
+        [_cryptoImageView.heightAnchor constraintEqualToConstant:25].active = YES;
+        [_cryptoImageView.widthAnchor constraintEqualToConstant:25].active = YES;
         
         self.cryptoImageView.contentMode = UIViewContentModeScaleAspectFit;
         self.cryptoImageView.clipsToBounds = YES;
         
         self.priceAndPercentajeStackView = [[UIStackView alloc] init];
         self.priceAndPercentajeStackView.axis = UILayoutConstraintAxisVertical;
-        self.priceAndPercentajeStackView.spacing = 5;
         self.priceAndPercentajeStackView.distribution = UIStackViewDistributionFillEqually;
         self.priceAndPercentajeStackView.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.nameAndSymbolStackView = [[UIStackView alloc] init];
         self.nameAndSymbolStackView.axis = UILayoutConstraintAxisVertical;
-        self.nameAndSymbolStackView.spacing = 2;
         self.nameAndSymbolStackView.alignment = UIStackViewAlignmentTop;
         self.nameAndSymbolStackView.distribution = UIStackViewDistributionFillEqually;
         self.nameAndSymbolStackView.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.nameLabel = [[UILabel alloc] init];
-        self.nameLabel.font = [UIFont boldSystemFontOfSize:14.0];
+        self.nameLabel.font = [UIFont boldSystemFontOfSize:18.0];
         self.nameLabel.textColor = [UIColor whiteColor];
+        self.nameLabel.numberOfLines = 0;
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.symbolLabel = [[UILabel alloc] init];
-        self.symbolLabel.font = [UIFont systemFontOfSize:10.0];
+        self.symbolLabel.font = [UIFont systemFontOfSize:14.0];
         self.symbolLabel.textColor = [UIColor grayColor];
         self.symbolLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.priceLabel = [[UILabel alloc] init];
-        self.priceLabel.font = [UIFont boldSystemFontOfSize:18.0];
+        self.priceLabel.font = [UIFont boldSystemFontOfSize:24.0];
         self.priceLabel.textAlignment = NSTextAlignmentRight;
         self.priceLabel.textColor = [UIColor whiteColor];
+        self.priceLabel.numberOfLines = 0;
         self.priceLabel.translatesAutoresizingMaskIntoConstraints = NO;
         
         
         self.percentChangeLabel = [[UILabel alloc] init];
-        self.percentChangeLabel.font = [UIFont systemFontOfSize:10.0];
+        self.percentChangeLabel.font = [UIFont systemFontOfSize:14.0];
         self.percentChangeLabel.textAlignment = NSTextAlignmentRight;
         self.percentChangeLabel.textColor = [UIColor whiteColor];
         self.percentChangeLabel.translatesAutoresizingMaskIntoConstraints = NO;
@@ -88,15 +88,25 @@
 -(void)setupConstraints {
     UIStackView *sectionStackView = [[UIStackView alloc] init];
     UIView *dummyView = [[UIView alloc] init];
+    UIView *cellBackgroundView = [[UIView alloc] init];
+    
+    cellBackgroundView.translatesAutoresizingMaskIntoConstraints = NO;
+    sectionStackView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.cryptoImageView.translatesAutoresizingMaskIntoConstraints = NO;
     
     sectionStackView.axis = UILayoutConstraintAxisHorizontal;
     sectionStackView.spacing = 16;
     sectionStackView.distribution = UIStackViewDistributionFillProportionally;
-    sectionStackView.backgroundColor = [UIColor colorNamed:@"myPrimaryBgColor"];
-    sectionStackView.layer.cornerRadius = 10;
     
-    [self.contentView addSubview:sectionStackView];
-    [sectionStackView addArrangedSubview:self.cryptoImageView];
+    cellBackgroundView.backgroundColor = [UIColor colorNamed:@"myPrimaryBgColor"];
+    cellBackgroundView.layer.cornerRadius = 10;
+    
+    [cellBackgroundView addSubview:sectionStackView];
+    [self.contentView addSubview:cellBackgroundView];
+    [self.contentView addSubview:self.cryptoImageView];
+    
+//    [self.contentView addSubview:sectionStackView];
+//    [sectionStackView addArrangedSubview:self.cryptoImageView];
     [_nameAndSymbolStackView addArrangedSubview:self.nameLabel];
     [_nameAndSymbolStackView addArrangedSubview:self.symbolLabel];
     [_priceAndPercentajeStackView addArrangedSubview:self.priceLabel];
@@ -105,13 +115,21 @@
     [sectionStackView addArrangedSubview:self.priceAndPercentajeStackView];
     [sectionStackView addArrangedSubview:dummyView];
     
-    sectionStackView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [cellBackgroundView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:16].active = YES;
+    [cellBackgroundView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-16].active = YES;
+    [cellBackgroundView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:10].active = YES;
+    [cellBackgroundView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-20].active = YES;
+    
     [sectionStackView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:16].active = YES;
     [sectionStackView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-16].active = YES;
-    [sectionStackView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:10].active = YES;
-    [sectionStackView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-10].active = YES;
-    [_cryptoImageView.leadingAnchor constraintEqualToAnchor:sectionStackView.leadingAnchor constant:16].active = YES;
+    [sectionStackView.topAnchor constraintEqualToAnchor:self.cryptoImageView.bottomAnchor constant:8].active = YES;
+    [sectionStackView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor constant:-20].active = YES;
+    [_nameAndSymbolStackView.leadingAnchor constraintEqualToAnchor:sectionStackView.leadingAnchor constant:16].active = YES;
     [sectionStackView.heightAnchor constraintEqualToConstant:72].active = YES;
+    
+    [self.cryptoImageView.leadingAnchor constraintEqualToAnchor:sectionStackView.leadingAnchor constant:16].active = YES;
+    [self.cryptoImageView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor].active = YES;
 }
 
 -(void)configureCell:(NSString *)name symbol:(NSString *)symbol price:(NSString *)price percentChange:(NSString *)percentChange imageUrl:(NSString *)imageUrl {

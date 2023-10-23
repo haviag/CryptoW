@@ -13,6 +13,7 @@
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
 
 @property (strong, nonatomic) UITableView *myTableView;
+@property (strong, nonatomic) UILabel *titleView;
 
 @end
 
@@ -29,20 +30,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
-    self.myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+    self.myTableView = [[UITableView alloc] init];
     self.myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.myTableView.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
+    
     self.cryptoDataController.delegate = self;
     
-//    [self.cryptoDataController loadCryptoDataFromAPI];
-    [self.cryptoDataController loadCryptoDataFromJSON];
+    [self.cryptoDataController loadCryptoDataFromAPI];
+//    [self.cryptoDataController loadCryptoDataFromJSON];
     [self.myTableView registerClass:[CryptoCell class] forCellReuseIdentifier:@"CryptoCell"];
     
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
     
+    [self.myTableView addSubview:self.titleView];
     [self.view addSubview:self.myTableView];
+    [self setupConstraints];
     
 }
 
@@ -52,16 +57,25 @@
     });
 }
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+- (void)setupConstraints {
+    self.myTableView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        self.myTableView.frame = CGRectMake(0, 0, size.width, size.height);
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        [self.myTableView reloadData];
-    }];
+    [self.myTableView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [self.myTableView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [self.myTableView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [self.myTableView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat titleHeight = self.titleView.frame.size.height;
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    if (offsetY > titleHeight) {
+        _titleView.hidden = true;
+    } else {
+        _titleView.hidden = false;
+    }
+}
 
 // MARK: DataSource TableView
 // MARK: Delegate TableView
@@ -79,14 +93,10 @@
     
     if (indexPath.row < self.cryptoDataController.cryptoCurrencies.count) {
         CryptoCurrency *cryptoCurrency = self.cryptoDataController.cryptoCurrencies[indexPath.row];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
         
-        
-        cell.nameLabel.text = cryptoCurrency.name;
-        cell.symbolLabel.text = cryptoCurrency.symbol;
-        cell.priceLabel.text = [NSString stringWithFormat:@"$%.2f", [cryptoCurrency.price floatValue]];
-        cell.percentChangeLabel.text = [NSString stringWithFormat:@"%.2f%%", [cryptoCurrency.percentChange24h floatValue]];
-        
-        [cell configureCell:cryptoCurrency.name symbol:cryptoCurrency.symbol price:cell.priceLabel.text percentChange:cell.percentChangeLabel.text imageUrl:[NSString stringWithFormat:@"%d", [cryptoCurrency.idForImage intValue]]];
+        [cell configureCell:cryptoCurrency.name symbol:cryptoCurrency.symbol price:[formatter stringFromNumber:cryptoCurrency.price] percentChange:[NSString stringWithFormat:@"%.2f%%", [cryptoCurrency.percentChange24h floatValue]] imageUrl:[NSString stringWithFormat:@"%d", [cryptoCurrency.idForImage intValue]]];
     }
     
     return cell;
@@ -94,15 +104,18 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 5, tableView.frame.size.width - 20, 20)];
-    titleLabel.text = @"Home";
-    titleLabel.font = [UIFont systemFontOfSize:24.0];
-    titleLabel.textColor = [UIColor lightTextColor];
-    
-    [headerView addSubview:titleLabel];
+    self.titleView = [[UILabel alloc] initWithFrame:CGRectMake(16, 0, self.myTableView.frame.size.width - 20, 20)];
+    self.titleView.backgroundColor = [UIColor colorNamed:@"MyBackgoundColor"];
+    self.titleView.text = @"Home";
+    self.titleView.textColor = [UIColor whiteColor];
+    self.titleView.font = [UIFont systemFontOfSize:24.0];
+    [headerView addSubview:self.titleView];
     return headerView;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -11,6 +11,7 @@
 @interface HomeViewController : UIViewController
 
 @property (strong, nonatomic) CryptoDataController *cryptoDataController;
+
 -(instancetype)initWithCryptoData:(CryptoDataController *)cryptoData;
 
 @end
