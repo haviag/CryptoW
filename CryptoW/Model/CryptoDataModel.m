@@ -5,10 +5,10 @@
 //  Created by Harold Villacob on 18/10/23.
 //
 
-#import "CryptoDataController.h"
+#import "CryptoDataModel.h"
 #import "CryptoCurrency.h"
 
-@implementation CryptoDataController
+@implementation CryptoDataModel
 
 - (instancetype)init {
     self = [super init];

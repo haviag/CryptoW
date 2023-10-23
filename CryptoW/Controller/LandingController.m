@@ -7,7 +7,7 @@
 
 #import "LandingController.h"
 #import "HomeController.h"
-#import "CryptoDataController.h"
+#import "CryptoDataModel.h"
 
 @implementation LandingController
 
@@ -24,8 +24,8 @@
 }
 
 - (void)accessWalletTapped {
-    CryptoDataController *cryptoDataController = [[CryptoDataController alloc] init];
-    HomeController *homeVC = [[HomeController alloc] initWithCryptoData:cryptoDataController];
+    CryptoDataModel *cryptoDataModel = [[CryptoDataModel alloc] init];
+    HomeController *homeVC = [[HomeController alloc] initWithCryptoData:cryptoDataModel];
     
     [self.navigationController pushViewController:homeVC animated:YES];
 }

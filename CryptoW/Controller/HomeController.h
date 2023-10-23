@@ -6,13 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CryptoDataController.h"
+#import "CryptoDataModel.h"
+#import "HomeTableView.h"
 
-@interface HomeController : UIViewController
+@interface HomeController : UIViewController <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
 
-@property (strong, nonatomic) CryptoDataController *cryptoDataController;
+@property (strong, nonatomic) CryptoDataModel *cryptoDataModel;
+@property (strong, nonatomic) HomeTableView *myHomeTableView;
 
--(instancetype)initWithCryptoData:(CryptoDataController *)cryptoData;
+-(instancetype)initWithCryptoData:(CryptoDataModel *)cryptoData;
 
 @end
 
