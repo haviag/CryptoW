@@ -23,6 +23,7 @@
 		7EDACE0F2AE1D29900CA5F6B /* LandingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE0E2AE1D29900CA5F6B /* LandingController.m */; };
 		7EDACE122AE23DDE00CA5F6B /* CryptoCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE112AE23DDE00CA5F6B /* CryptoCurrency.m */; };
 		7EDACE182AE2E36000CA5F6B /* CryptoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE172AE2E36000CA5F6B /* CryptoDetailController.m */; };
+		7EDACE1B2AE6D4CF00CA5F6B /* CryptoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		7EDACE112AE23DDE00CA5F6B /* CryptoCurrency.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoCurrency.m; sourceTree = "<group>"; };
 		7EDACE162AE2E36000CA5F6B /* CryptoDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoDetailController.h; sourceTree = "<group>"; };
 		7EDACE172AE2E36000CA5F6B /* CryptoDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDetailController.m; sourceTree = "<group>"; };
+		7EDACE192AE6D4CF00CA5F6B /* CryptoDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoDetail.h; sourceTree = "<group>"; };
+		7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 			children = (
 				7E523B942AE01B41008C96FC /* CryptoCell.h */,
 				7E523B952AE01B71008C96FC /* CryptoCell.m */,
+				7EDACE192AE6D4CF00CA5F6B /* CryptoDetail.h */,
+				7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				7E523B982AE01E02008C96FC /* HomeViewController.m in Sources */,
 				7E523B962AE01B71008C96FC /* CryptoCell.m in Sources */,
 				7EDACE122AE23DDE00CA5F6B /* CryptoCurrency.m in Sources */,
+				7EDACE1B2AE6D4CF00CA5F6B /* CryptoDetail.m in Sources */,
 				7E523B562ADF8C76008C96FC /* AppDelegate.m in Sources */,
 				7E523B672ADF8C78008C96FC /* main.m in Sources */,
 				7EDACE182AE2E36000CA5F6B /* CryptoDetailController.m in Sources */,
