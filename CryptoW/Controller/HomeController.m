@@ -31,8 +31,9 @@
     myHomeTableView.myTableView.dataSource = self;
     myHomeTableView.myTableView.delegate = self;
     
-//    [self.cryptoDataModel loadCryptoDataFromAPI];
-    [self.cryptoDataModel loadCryptoDataFromJSON];
+    [self.cryptoDataModel loadCryptoDataFromAPI];
+    
+//    [self.cryptoDataModel loadCryptoDataFromJSON];
     
     [self.view addSubview:myHomeTableView];
     
