@@ -5,19 +5,19 @@
 //  Created by Harold Villacob on 17/10/23.
 //
 
-#import "HomeViewController.h"
+#import "HomeController.h"
 #import "CryptoCell.h"
 #import "CryptoCurrency.h"
 #import "CryptoDetailController.h"
 
-@interface HomeViewController () <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
+@interface HomeController () <UITableViewDelegate, UITableViewDataSource, CryptoDataControllerDelegate>
 
 @property (strong, nonatomic) UITableView *myTableView;
 @property (strong, nonatomic) UILabel *titleView;
 
 @end
 
-@implementation HomeViewController
+@implementation HomeController
 
 -(instancetype)initWithCryptoData:(CryptoDataController *)cryptoData {
     self = [super init];

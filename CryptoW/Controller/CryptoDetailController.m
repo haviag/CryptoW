@@ -36,20 +36,20 @@
     NSString *baseUrl = @"https://s2.coinmarketcap.com/static/img/coins/64x64/";
     NSString *imageName = [NSString stringWithFormat:@"%@.png", [NSString stringWithFormat:@"%d", [cryptoCurrency.idForImage intValue]]];
     [self loadCryptoImageFromURL:[baseUrl stringByAppendingString:imageName]];
-    self.cryptoDetailView.nameLabel.text = cryptoCurrency.name;
-    self.cryptoDetailView.symbolLabel.text = cryptoCurrency.symbol;
-    self.cryptoDetailView.priceLabel.text = [formatter stringFromNumber:cryptoCurrency.price];
-    self.cryptoDetailView.percentChangeLabel.text = [NSString stringWithFormat:@"%.2f%%", [cryptoCurrency.percentChange24h floatValue]];
-    self.cryptoDetailView.circulateSupplyLabel.text = [formatter stringFromNumber:cryptoCurrency.circulatingSupply];
+    cryptoDetailView.nameLabel.text = cryptoCurrency.name;
+    cryptoDetailView.symbolLabel.text = cryptoCurrency.symbol;
+    cryptoDetailView.priceLabel.text = [formatter stringFromNumber:cryptoCurrency.price];
+    cryptoDetailView.percentChangeLabel.text = [NSString stringWithFormat:@"%.2f%%", [cryptoCurrency.percentChange24h floatValue]];
+    cryptoDetailView.circulateSupplyLabel.text = [formatter stringFromNumber:cryptoCurrency.circulatingSupply];
     if ([cryptoCurrency.maxSupply isKindOfClass:[NSNumber class]]) {
         double maxSupplyValue = [cryptoCurrency.maxSupply doubleValue];
         double circulatingSupplyValue = [cryptoCurrency.circulatingSupply doubleValue];
         double percentageOccupied = (circulatingSupplyValue / maxSupplyValue) * 100;
-        self.cryptoDetailView.mySlider.value = percentageOccupied/100;
-        self.cryptoDetailView.circulatingSupplyPercentageLabel.text = [NSString stringWithFormat:@"%.2f%%", percentageOccupied];
+        cryptoDetailView.mySlider.value = percentageOccupied/100;
+        cryptoDetailView.circulatingSupplyPercentageLabel.text = [NSString stringWithFormat:@"%.2f%%", percentageOccupied];
     } else {
-        self.cryptoDetailView.mySlider.hidden = true;
-        self.cryptoDetailView.circulatingSupplyPercentageLabel.hidden = true;
+        cryptoDetailView.mySlider.hidden = true;
+        cryptoDetailView.circulatingSupplyPercentageLabel.hidden = true;
     }
 }
 

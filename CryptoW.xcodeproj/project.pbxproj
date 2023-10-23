@@ -19,11 +19,12 @@
 		7E523B912AE01A63008C96FC /* CryptoDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B902AE01A63008C96FC /* CryptoDataController.m */; };
 		7E523B932AE01ADA008C96FC /* cryptoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E523B922AE01ADA008C96FC /* cryptoData.json */; };
 		7E523B962AE01B71008C96FC /* CryptoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B952AE01B71008C96FC /* CryptoCell.m */; };
-		7E523B982AE01E02008C96FC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B972AE01E02008C96FC /* HomeViewController.m */; };
+		7E523B982AE01E02008C96FC /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E523B972AE01E02008C96FC /* HomeController.m */; };
 		7EDACE0F2AE1D29900CA5F6B /* LandingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE0E2AE1D29900CA5F6B /* LandingController.m */; };
 		7EDACE122AE23DDE00CA5F6B /* CryptoCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE112AE23DDE00CA5F6B /* CryptoCurrency.m */; };
 		7EDACE182AE2E36000CA5F6B /* CryptoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE172AE2E36000CA5F6B /* CryptoDetailController.m */; };
 		7EDACE1B2AE6D4CF00CA5F6B /* CryptoDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */; };
+		7EDACE1E2AE6FE0B00CA5F6B /* LandingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDACE1D2AE6FE0B00CA5F6B /* LandingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,13 +60,13 @@
 		7E523B762ADF8C78008C96FC /* CryptoWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E523B7A2ADF8C78008C96FC /* CryptoWUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoWUITests.m; sourceTree = "<group>"; };
 		7E523B7C2ADF8C78008C96FC /* CryptoWUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoWUITestsLaunchTests.m; sourceTree = "<group>"; };
-		7E523B8B2AE00E39008C96FC /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7E523B8B2AE00E39008C96FC /* HomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
 		7E523B8F2AE01A22008C96FC /* CryptoDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoDataController.h; sourceTree = "<group>"; };
 		7E523B902AE01A63008C96FC /* CryptoDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDataController.m; sourceTree = "<group>"; };
 		7E523B922AE01ADA008C96FC /* cryptoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cryptoData.json; sourceTree = "<group>"; };
 		7E523B942AE01B41008C96FC /* CryptoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoCell.h; sourceTree = "<group>"; };
 		7E523B952AE01B71008C96FC /* CryptoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoCell.m; sourceTree = "<group>"; };
-		7E523B972AE01E02008C96FC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7E523B972AE01E02008C96FC /* HomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeController.m; sourceTree = "<group>"; };
 		7EDACE0D2AE1D29900CA5F6B /* LandingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandingController.h; sourceTree = "<group>"; };
 		7EDACE0E2AE1D29900CA5F6B /* LandingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandingController.m; sourceTree = "<group>"; };
 		7EDACE102AE23DDE00CA5F6B /* CryptoCurrency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoCurrency.h; sourceTree = "<group>"; };
@@ -74,6 +75,8 @@
 		7EDACE172AE2E36000CA5F6B /* CryptoDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDetailController.m; sourceTree = "<group>"; };
 		7EDACE192AE6D4CF00CA5F6B /* CryptoDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoDetail.h; sourceTree = "<group>"; };
 		7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoDetail.m; sourceTree = "<group>"; };
+		7EDACE1C2AE6FE0B00CA5F6B /* LandingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandingView.h; sourceTree = "<group>"; };
+		7EDACE1D2AE6FE0B00CA5F6B /* LandingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +166,8 @@
 			children = (
 				7EDACE0D2AE1D29900CA5F6B /* LandingController.h */,
 				7EDACE0E2AE1D29900CA5F6B /* LandingController.m */,
-				7E523B8B2AE00E39008C96FC /* HomeViewController.h */,
-				7E523B972AE01E02008C96FC /* HomeViewController.m */,
+				7E523B8B2AE00E39008C96FC /* HomeController.h */,
+				7E523B972AE01E02008C96FC /* HomeController.m */,
 				7EDACE162AE2E36000CA5F6B /* CryptoDetailController.h */,
 				7EDACE172AE2E36000CA5F6B /* CryptoDetailController.m */,
 			);
@@ -185,10 +188,11 @@
 		7EDACE142AE250BB00CA5F6B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7E523B942AE01B41008C96FC /* CryptoCell.h */,
-				7E523B952AE01B71008C96FC /* CryptoCell.m */,
+				7EDACE1F2AE6FE6800CA5F6B /* TableViewCells */,
 				7EDACE192AE6D4CF00CA5F6B /* CryptoDetail.h */,
 				7EDACE1A2AE6D4CF00CA5F6B /* CryptoDetail.m */,
+				7EDACE1C2AE6FE0B00CA5F6B /* LandingView.h */,
+				7EDACE1D2AE6FE0B00CA5F6B /* LandingView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,6 +203,15 @@
 				7E523B922AE01ADA008C96FC /* cryptoData.json */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		7EDACE1F2AE6FE6800CA5F6B /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				7E523B942AE01B41008C96FC /* CryptoCell.h */,
+				7E523B952AE01B71008C96FC /* CryptoCell.m */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,11 +346,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EDACE0F2AE1D29900CA5F6B /* LandingController.m in Sources */,
-				7E523B982AE01E02008C96FC /* HomeViewController.m in Sources */,
+				7E523B982AE01E02008C96FC /* HomeController.m in Sources */,
 				7E523B962AE01B71008C96FC /* CryptoCell.m in Sources */,
 				7EDACE122AE23DDE00CA5F6B /* CryptoCurrency.m in Sources */,
 				7EDACE1B2AE6D4CF00CA5F6B /* CryptoDetail.m in Sources */,
 				7E523B562ADF8C76008C96FC /* AppDelegate.m in Sources */,
+				7EDACE1E2AE6FE0B00CA5F6B /* LandingView.m in Sources */,
 				7E523B672ADF8C78008C96FC /* main.m in Sources */,
 				7EDACE182AE2E36000CA5F6B /* CryptoDetailController.m in Sources */,
 				7E523B912AE01A63008C96FC /* CryptoDataController.m in Sources */,

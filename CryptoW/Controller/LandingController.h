@@ -6,7 +6,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LandingView.h"
 
 @interface LandingController : UIViewController
+
+@property (strong, nonatomic) LandingView * landingView;
 
 @end
